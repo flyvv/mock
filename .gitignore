@@ -1,0 +1,11 @@
+/node_modules
+/npm-debug.log*
+/dist
+/yarn-error.log
+/yarn.lock
+/package-lock.json
+
+/src/.umi
+/src/.umi-production
+/src/.umi-test
+/.env.local

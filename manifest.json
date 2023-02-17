@@ -1,0 +1,33 @@
+{
+	"description": "test",
+	"version": "0.0.1",
+	"name": "test",
+	"manifest_version": 3,
+	"background": {
+		"service_worker": "extension/background/index.js"
+	},
+	"permissions": [
+		"storage",
+		"unlimitedStorage",
+		"scripting",
+		"tabs",
+		"activeTab",
+		"downloads"
+	],
+	"action": {
+		"default_popup": "index.html"
+	},
+	"web_accessible_resources": [
+		{
+			"resources": ["extension/page-script/index.js"],
+			"matches": ["*://*/*"]
+		}
+	],
+	"content_scripts": [
+		{
+			"matches": ["*://*.aliexpress.com/", "*://*/*"],
+			"js": ["extension/content-script/index.js"],
+			"run_at": "document_start"
+		}
+	]
+}
