@@ -1,6 +1,8 @@
 import { Menu, Layout, Button } from 'antd'
 import React from 'react'
 import { MHeader } from '../components'
+import { Cheader } from './Cheader'
+import { Contain } from './Contain'
 const { Content, Sider } = Layout
 
 export const Container = (props: { info: IMockDataType }) => {
@@ -17,7 +19,7 @@ export const Container = (props: { info: IMockDataType }) => {
 					width={120}
 					style={{
 						overflow: 'auto',
-						height: '100vh',
+						height: 560,
 						width: 100,
 						background: '#fff',
 						borderRight: '1px solid #ddd',
@@ -38,20 +40,8 @@ export const Container = (props: { info: IMockDataType }) => {
 				</Sider>
 				<Layout style={{ background: '#fff' }}>
 					<Content style={{ padding: 8 }}>
-						<div className="flex-between">
-							<div>{info.currentPageInfo?.title}</div>
-							<Button ghost type="primary">
-								生成报告
-							</Button>
-						</div>
-						<hr />
-						{pagesHaveCurrentPage ? (
-							<div>接口信息</div>
-						) : (
-							<Button type="primary" ghost>
-								创建页面
-							</Button>
-						)}
+						<Cheader info={props.info} />
+						<Contain info={props.info} />
 						{/* <Editor
               value={JSON.stringify(props.info)}
               theme="vs-dark"
