@@ -37,6 +37,7 @@ export default function App() {
 							url: currentUrl,
 							title: currentTitle,
 							apiCapture: false,
+              apis:[]
 						}
 						const data = {
 							projects: [],

@@ -1,4 +1,4 @@
-import { init } from './libs'
+import { handleConfigChange, handleCurrentPageInfoChange, init } from './libs'
 
 {
 	init()
@@ -6,9 +6,12 @@ import { init } from './libs'
 		for (const [key, { oldValue, newValue }] of Object.entries(changes)) {
 			switch (key) {
 				case 'config':
+					handleConfigChange(oldValue, newValue)
+					break
 				case 'currentPageInfo':
+					handleCurrentPageInfoChange(oldValue, newValue)
+					break
 				default:
-					console.log(oldValue, newValue)
 					break
 			}
 		}
